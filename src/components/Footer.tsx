@@ -73,9 +73,13 @@ export default function Footer() {
         </div>
 
         <div style={{ textAlign: 'center', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '16px' }}>
-          <p style={{ fontSize: '12px', color: '#C8D3E3' }}>
-            Developed by <a href="https://www.orbitrixsolutions.com" target="_blank" rel="noopener noreferrer" style={{ color: '#00B8FF', textDecoration: 'none', fontWeight: 600 }}>Orbitrix Solutions</a>
-          </p>
+          <a href="https://www.orbitrixsolutions.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+            <div style={{ width: '28px', height: '28px', borderRadius: '8px', background: '#00B8FF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: '14px', color: 'white', flexShrink: 0 }}>O</div>
+            <div>
+              <span style={{ fontSize: '12px', color: '#C8D3E3' }}>Web Development by </span>
+              <span style={{ fontSize: '12px', color: '#00B8FF', fontWeight: 600 }}>Orbitrix Solutions</span>
+            </div>
+          </a>
         </div>
       </div>
     </footer>

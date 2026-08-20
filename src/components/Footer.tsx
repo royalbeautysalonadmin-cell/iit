@@ -71,6 +71,12 @@ export default function Footer() {
             <ArrowUp size={16} />
           </button>
         </div>
+
+        <div style={{ textAlign: 'center', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '16px' }}>
+          <p style={{ fontSize: '12px', color: '#C8D3E3' }}>
+            Developed by <a href="https://www.orbitrixsolutions.com" target="_blank" rel="noopener noreferrer" style={{ color: '#00B8FF', textDecoration: 'none', fontWeight: 600 }}>Orbitrix Solutions</a>
+          </p>
+        </div>
       </div>
     </footer>
   )

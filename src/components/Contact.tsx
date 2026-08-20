@@ -6,8 +6,25 @@ import { Section, SectionHeader } from './Layout'
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', subject: '', message: '', type: 'general' })
   const [sent, setSent] = useState(false)
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSent(true); setTimeout(() => setSent(false), 5000); setForm({ name: '', email: '', phone: '', company: '', subject: '', message: '', type: 'general' }) }
-  const inputStyle: React.CSSProperties = { width: '100%', padding: '12px 16px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', color: 'white', fontSize: '14px', outline: 'none', transition: 'all 0.3s' }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const typeLabels: Record<string, string> = { general: 'General Inquiry', sportswear: 'Sportswear Order', machine: 'Machine Purchase', dealer: 'Become a Dealer', support: 'Technical Support' }
+    const body = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      form.phone && `Phone: ${form.phone}`,
+      form.company && `Company: ${form.company}`,
+      `Inquiry Type: ${typeLabels[form.type] || form.type}`,
+      '',
+      form.message,
+    ].filter(Boolean).join('\n')
+    const mailto = `mailto:info@iitpakistan.com?subject=${encodeURIComponent(`[${typeLabels[form.type] || 'Inquiry'}] ${form.subject}`)}&body=${encodeURIComponent(body)}`
+    window.location.href = mailto
+    setSent(true)
+    setTimeout(() => setSent(false), 5000)
+    setForm({ name: '', email: '', phone: '', company: '', subject: '', message: '', type: 'general' })
+  }
+  const inputStyle: React.CSSProperties = { width: '100%', padding: '12px 16px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', color: 'white', fontSize: '14px', outline: 'none', transition: 'all 0.3s', boxSizing: 'border-box' as const }
   const labelStyle: React.CSSProperties = { fontSize: '11px', color: '#C8D3E3', textTransform: 'uppercase' as const, letterSpacing: '0.1em', marginBottom: '6px', display: 'block' }
 
   const items = [
@@ -48,8 +65,8 @@ export default function Contact() {
             {sent ? (
               <div style={{ textAlign: 'center', padding: '48px 0' }}>
                 <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(0,184,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}><Send size={28} style={{ color: '#00B8FF' }} /></div>
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.25rem', color: 'white', marginBottom: '8px' }}>Message Sent!</h3>
-                <p style={{ color: '#C8D3E3', fontSize: '14px' }}>We will respond within 24 hours.</p>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.25rem', color: 'white', marginBottom: '8px' }}>Opening Your Email Client</h3>
+                <p style={{ color: '#C8D3E3', fontSize: '14px' }}>Please send the email to complete your inquiry. We respond within 24 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -63,18 +80,20 @@ export default function Contact() {
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="form-grid">
                   <div><label style={labelStyle}>Inquiry Type</label>
-                    <select value={form.type} onChange={e => setForm({ ...form, type: e.target.value })} style={{ ...inputStyle, appearance: 'auto' as any }}>
-                      <option value="general" className="bg-dark-bg">General Inquiry</option>
-                      <option value="sportswear" className="bg-dark-bg">Sportswear Order</option>
-                      <option value="machine" className="bg-dark-bg">Machine Purchase</option>
-                      <option value="dealer" className="bg-dark-bg">Become a Dealer</option>
-                      <option value="support" className="bg-dark-bg">Technical Support</option>
+                    <select value={form.type} onChange={e => setForm({ ...form, type: e.target.value })} style={{ ...inputStyle, appearance: 'auto' as any, colorScheme: 'dark' }}>
+                      <option value="general">General Inquiry</option>
+                      <option value="sportswear">Sportswear Order</option>
+                      <option value="machine">Machine Purchase</option>
+                      <option value="dealer">Become a Dealer</option>
+                      <option value="support">Technical Support</option>
                     </select>
                   </div>
                   <div><label style={labelStyle}>Subject *</label><input required value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} style={inputStyle} placeholder="Subject" /></div>
                 </div>
                 <div><label style={labelStyle}>Message *</label><textarea required rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} style={{ ...inputStyle, resize: 'none' as const }} placeholder="Tell us about your project..." /></div>
-                <button type="submit" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px 32px', background: '#00B8FF', color: 'white', fontWeight: 600, borderRadius: '12px', border: 'none', cursor: 'pointer', fontSize: '14px', transition: 'all 0.3s', alignSelf: 'flex-start' }}>
+                <button type="submit" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px 32px', background: '#00B8FF', color: 'white', fontWeight: 600, borderRadius: '12px', border: 'none', cursor: 'pointer', fontSize: '14px', transition: 'all 0.3s', width: '100%' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#009ee0'; e.currentTarget.style.boxShadow = '0 0 24px rgba(0,184,255,0.3)' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = '#00B8FF'; e.currentTarget.style.boxShadow = 'none' }}>
                   <Send size={16} /> Send Message
                 </button>
               </form>

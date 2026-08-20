@@ -40,7 +40,7 @@ export default function Hero() {
       </div>
 
       <div style={{ position: 'relative', zIndex: 20, width: '100%' }}>
-        <div className="container-main" style={{ paddingTop: '128px', paddingBottom: '96px' }}>
+        <div className="container-main" style={{ paddingTop: 'clamp(80px, 15vw, 128px)', paddingBottom: 'clamp(60px, 12vw, 96px)' }}>
           <div style={{ textAlign: 'center', maxWidth: '48rem', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
               className="glass-card"
@@ -59,7 +59,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
-              style={{ fontSize: '18px', color: '#C8D3E3', maxWidth: '40rem', margin: '0 auto 48px', lineHeight: 1.7 }}
+              style={{ fontSize: 'clamp(15px, 2.5vw, 18px)', color: '#C8D3E3', maxWidth: '40rem', margin: '0 auto 48px', lineHeight: 1.7, padding: '0 16px' }}
             >
               IIT Pakistan is a leading industrial group delivering world-class textile machinery, custom sportswear manufacturing, sublimation solutions, and innovative printing technologies to businesses worldwide.
             </motion.p>
@@ -77,7 +77,7 @@ export default function Hero() {
           </div>
 
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }}
-            style={{ marginTop: '80px', maxWidth: '56rem', marginLeft: 'auto', marginRight: 'auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px' }}
+            style={{ marginTop: 'clamp(40px, 8vw, 80px)', maxWidth: '56rem', marginLeft: 'auto', marginRight: 'auto', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}
           >
             {stats.map((stat) => (
               <div key={stat.label} className="glass-card glow-hover" style={{ borderRadius: '16px', padding: '24px', textAlign: 'center' }}>

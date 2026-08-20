@@ -44,7 +44,7 @@ export default function Testimonials() {
           <div style={{ display: 'flex', gap: '20px' }}>
             {testimonials.map((t, i) => (
               <motion.div key={t.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ flex: '0 0 340px' }}>
+                style={{ flex: '0 0 min(340px, 85vw)' }}>
                 <div className="glass-card" style={{ borderRadius: '16px', padding: '28px', height: '100%' }}>
                   <Quote size={28} style={{ color: 'rgba(0,184,255,0.3)', marginBottom: '12px' }} />
                   <p style={{ color: '#C8D3E3', lineHeight: 1.7, marginBottom: '20px', fontSize: '14px' }}>"{t.text}"</p>

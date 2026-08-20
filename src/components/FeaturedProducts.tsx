@@ -46,7 +46,7 @@ export default function FeaturedProducts() {
           <div style={{ display: 'flex', gap: '20px' }}>
             {products.map((product, i) => (
               <motion.div key={product.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ flex: '0 0 280px' }}>
+                style={{ flex: '0 0 min(280px, 80vw)' }}>
                 <div className="glass-card glow-hover" style={{ borderRadius: '16px', padding: '28px', height: '100%', borderColor: selected === i ? 'rgba(0,184,255,0.3)' : undefined, transition: 'all 0.3s' }}>
                   <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: product.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
                     <product.icon size={28} style={{ color: '#00B8FF' }} />

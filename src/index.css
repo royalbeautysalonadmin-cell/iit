@@ -162,9 +162,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: rgba(0,184,255,0.5) !important;
-  box-shadow: 0 0 0 3px rgba(0,184,255,0.1);
-  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(0,184,255,0.6) !important;
+  box-shadow: 0 0 0 3px rgba(0,184,255,0.15), inset 0 0 0 1px rgba(0,184,255,0.2);
+  background: rgba(255,255,255,0.1) !important;
+  outline: none;
+}
+
+input, textarea, select {
+  pointer-events: auto;
+  cursor: text;
+}
+
+select {
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 input::placeholder, textarea::placeholder {

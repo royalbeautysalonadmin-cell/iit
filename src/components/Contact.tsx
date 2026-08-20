@@ -24,7 +24,7 @@ export default function Contact() {
     setTimeout(() => setSent(false), 5000)
     setForm({ name: '', email: '', phone: '', company: '', subject: '', message: '', type: 'general' })
   }
-  const inputStyle: React.CSSProperties = { width: '100%', padding: '12px 16px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', color: 'white', fontSize: '14px', outline: 'none', transition: 'all 0.3s', boxSizing: 'border-box' as const }
+  const inputStyle: React.CSSProperties = { width: '100%', padding: '14px 16px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(0,184,255,0.2)', borderRadius: '12px', color: 'white', fontSize: '15px', outline: 'none', transition: 'all 0.3s', boxSizing: 'border-box' as const, pointerEvents: 'auto' as const }
   const labelStyle: React.CSSProperties = { fontSize: '11px', color: '#C8D3E3', textTransform: 'uppercase' as const, letterSpacing: '0.1em', marginBottom: '6px', display: 'block' }
 
   const items = [
@@ -38,7 +38,7 @@ export default function Contact() {
 
   return (
     <Section id="contact">
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '800px', height: '800px', background: 'rgba(11,61,145,0.2)', borderRadius: '50%', filter: 'blur(200px)' }} />
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '800px', height: '800px', background: 'rgba(11,61,145,0.2)', borderRadius: '50%', filter: 'blur(200px)', pointerEvents: 'none' }} />
       <SectionHeader tag="Contact Us" title="Get in" titleGradient="Touch" description="Ready to start your project? Contact us for inquiries, quotations, or partnership opportunities." />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -60,8 +60,8 @@ export default function Contact() {
             ))}
           </div>
         </div>
-        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}>
-          <div className="glass-card" style={{ borderRadius: '24px', padding: 'clamp(24px, 4vw, 40px)' }}>
+        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} style={{ position: 'relative', zIndex: 2 }}>
+          <div className="glass-card" style={{ borderRadius: '24px', padding: 'clamp(24px, 4vw, 40px)', position: 'relative', zIndex: 2 }}>
             {sent ? (
               <div style={{ textAlign: 'center', padding: '48px 0' }}>
                 <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(0,184,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}><Send size={28} style={{ color: '#00B8FF' }} /></div>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B8FF"/>
+      <stop offset="100%" stop-color="#0B3D91"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#logoGrad)"/>
+  <rect x="4" y="4" width="112" height="112" rx="24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="60" y="72" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="46" fill="white" filter="url(#glow)" letter-spacing="-2">IIT</text>
+</svg>

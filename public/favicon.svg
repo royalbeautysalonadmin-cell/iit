@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00B8FF"/>
-      <stop offset="100%" stop-color="#0B3D91"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="6" fill="url(#g)"/>
-  <text x="16" y="22" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="white">IIT</text>
+  <!-- Grey curved lines -->
+  <path d="M12,26 Q6,22 7,16 Q8,11 14,9" fill="none" stroke="#B0BAC4" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M11,28 Q4,24 5,15 Q6,8 14,5" fill="none" stroke="#C7CDD3" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Blue curved lines -->
+  <path d="M13,24 Q9,21 9,16 Q9,12 14,10" fill="none" stroke="#4AABDE" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M15,22 Q11,20 11,15 Q11,12 15,10" fill="none" stroke="#2D8FD1" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Blue diagonal -->
+  <line x1="12" y1="4" x2="17" y2="9" stroke="#2D8FD1" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Blue dot -->
+  <circle cx="18" cy="3" r="1.8" fill="#2D8FD1"/>
 </svg>

@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <defs>
-    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00B8FF"/>
-      <stop offset="100%" stop-color="#0B3D91"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-  </defs>
-  <rect width="120" height="120" rx="28" fill="url(#logoGrad)"/>
-  <rect x="4" y="4" width="112" height="112" rx="24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-  <text x="60" y="72" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="46" fill="white" filter="url(#glow)" letter-spacing="-2">IIT</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Shadow -->
+  <ellipse cx="50" cy="90" rx="28" ry="5" fill="rgba(0,0,0,0.12)"/>
+  <!-- Grey curved lines -->
+  <path d="M38,82 Q18,72 22,52 Q26,34 44,28" fill="none" stroke="#B0BAC4" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M34,88 Q10,76 16,48 Q22,24 46,16" fill="none" stroke="#C7CDD3" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Blue curved lines -->
+  <path d="M42,76 Q26,68 28,52 Q30,38 44,32" fill="none" stroke="#4AABDE" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M46,70 Q34,64 34,50 Q34,38 46,32" fill="none" stroke="#2D8FD1" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Blue diagonal accent -->
+  <line x1="38" y1="14" x2="54" y2="30" stroke="#2D8FD1" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Blue dot -->
+  <circle cx="58" cy="10" r="4.5" fill="#2D8FD1"/>
 </svg>

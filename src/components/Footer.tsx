@@ -2,11 +2,11 @@ import { ArrowUp, Phone, Mail, MapPin } from 'lucide-react'
 
 const footerLinks = {
   'Quick Links': [
-    { name: 'Our Journey', href: '#journey' },
     { name: 'Technologies', href: '#technology' },
-    { name: 'Solutions', href: '#solutions' },
+    { name: 'Principals', href: '#principals' },
+    { name: 'Services', href: '#solutions' },
     { name: 'Industries', href: '#industries' },
-    { name: 'Partners', href: '#principals' },
+    { name: 'Reach', href: '#reach' },
     { name: 'Contact', href: '#contact' },
   ],
   'Technologies': [
@@ -33,12 +33,8 @@ export default function Footer() {
       <div className="container-main">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '40px', marginBottom: '48px' }}>
           <div style={{ gridColumn: 'span 1' }}>
-            <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', marginBottom: '20px' }}>
-              <img src="/logo.svg" alt="IIT-Pak" style={{ width: '44px', height: '44px', borderRadius: '12px' }} />
-              <div>
-                <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '15px', color: 'white', display: 'block', lineHeight: 1.2 }}>IIT-Pak</span>
-                <span style={{ fontSize: '9px', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.15em', textTransform: 'uppercase' as const }}>Printing Technology Platform</span>
-              </div>
+            <a href="#home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: '20px' }}>
+              <img src="/logo-full.svg" alt="IIT-PAK — Innovative Technology" style={{ height: '32px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
             </a>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: '20px' }}>A local Pakistani concern growing into a global platform for printing technology. Connecting international innovation with Pakistan's printing, garment and textile industries.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

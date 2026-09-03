@@ -3,11 +3,11 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { name: 'Home', href: '#home' },
-  { name: 'Journey', href: '#journey' },
   { name: 'Technologies', href: '#technology' },
-  { name: 'Solutions', href: '#solutions' },
+  { name: 'Principals', href: '#principals' },
+  { name: 'Services', href: '#solutions' },
   { name: 'Industries', href: '#industries' },
-  { name: 'Partners', href: '#principals' },
+  { name: 'Reach', href: '#reach' },
   { name: 'Insights', href: '#insights' },
   { name: 'Contact', href: '#contact' },
 ]
@@ -49,12 +49,8 @@ export default function Navbar() {
       }}
     >
       <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
-        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flexShrink: 0 }}>
-          <img src="/logo.svg" alt="IIT-Pak" style={{ height: '40px', width: 'auto' }} />
-          <div className="nav-brand-text">
-            <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '17px', color: '#1A1A2E', display: 'block', lineHeight: 1.2 }}>IIT-Pak</span>
-            <span style={{ fontSize: '9px', color: '#5A6474', letterSpacing: '0.2em', textTransform: 'uppercase' }}>Printing Technology Platform</span>
-          </div>
+        <a href="#home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+          <img src="/logo-full.svg" alt="IIT-PAK — Innovative Technology" style={{ height: '36px', width: 'auto' }} />
         </a>
 
         <div className="nav-desktop-links">
@@ -117,13 +113,8 @@ export default function Navbar() {
       )}
 
       <style>{`
-        .nav-brand-text { display: none; }
         .nav-desktop-links { display: none; }
         .nav-hamburger { display: block; }
-
-        @media (min-width: 640px) {
-          .nav-brand-text { display: block; }
-        }
 
         @media (min-width: 1024px) {
           .nav-desktop-links { display: flex !important; align-items: center; }

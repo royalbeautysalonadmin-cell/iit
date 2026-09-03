@@ -1,4 +1,4 @@
-import { ArrowUp, Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
 
 const footerLinks = {
   'Quick Links': [
@@ -29,54 +29,50 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer style={{ position: 'relative', background: '#1A1A2E', paddingTop: '64px', paddingBottom: '32px' }}>
+    <footer style={{ position: 'relative', background: '#0C2340', paddingTop: '50px', paddingBottom: '30px', fontSize: '13.5px', color: '#9FB3C8' }}>
       <div className="container-main">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '40px', marginBottom: '48px' }}>
-          <div style={{ gridColumn: 'span 1' }}>
-            <a href="#home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: '20px' }}>
-              <img src="/logo-full.svg" alt="IIT-PAK — Innovative Technology" style={{ height: '32px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
+        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', gap: '40px', paddingBottom: '36px', borderBottom: '1px solid rgba(255,255,255,0.1)', marginBottom: '20px' }} className="footer-grid">
+          <div>
+            <a href="#home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: '14px' }}>
+              <img src="/logo-full.svg" alt="IIT-PAK" style={{ height: '28px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
             </a>
-            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: '20px' }}>A local Pakistani concern growing into a global platform for printing technology. Connecting international innovation with Pakistan's printing, garment and textile industries.</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <div style={{ marginBottom: '8px' }}>
-                <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginBottom: '2px' }}>Business Director</p>
-                <p style={{ fontSize: '14px', color: 'white', fontWeight: 600 }}>Tanveer Ahmad</p>
-              </div>
-              <a href="tel:+923008576668" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}><Phone size={14} />+92 300 8576668</a>
-              <a href="mailto:info@iitpakistan.com" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}><Mail size={14} />info@iitpakistan.com</a>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}><MapPin size={14} />Lahore, Punjab, Pakistan</div>
+            <p style={{ maxWidth: '260px', color: '#8FA4BA', lineHeight: 1.6, marginBottom: '20px' }}>A Pakistani printing-technology platform connecting international innovation with the country's garment, sportswear and textile industries.</p>
+
+            <div style={{ marginBottom: '16px' }}>
+              <p style={{ fontSize: '13px', color: 'white', fontWeight: 600, marginBottom: '2px' }}>Saadat Nazeer</p>
+              <p style={{ fontSize: '12px', color: '#8FA4BA', marginBottom: '6px' }}>CEO & Founder</p>
+              <a href="tel:+923061176766" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#9FB3C8', textDecoration: 'none' }}><Phone size={12} />0306-1176766</a>
             </div>
+
+            <div style={{ marginBottom: '16px' }}>
+              <p style={{ fontSize: '13px', color: 'white', fontWeight: 600, marginBottom: '2px' }}>Tanveer Ahmad</p>
+              <p style={{ fontSize: '12px', color: '#8FA4BA', marginBottom: '6px' }}>Business Director</p>
+              <a href="tel:+923008576668" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#9FB3C8', textDecoration: 'none' }}><Phone size={12} />+92 300 8576668</a>
+            </div>
+
+            <a href="mailto:info@iitpakistan.com" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#9FB3C8', textDecoration: 'none', marginBottom: '6px' }}><Mail size={12} />info@iitpakistan.com</a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#9FB3C8' }}><MapPin size={12} />Lahore, Punjab, Pakistan</div>
           </div>
+
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'white', fontSize: '14px', marginBottom: '20px' }}>{title}</h4>
+              <h4 style={{ color: 'white', fontSize: '13px', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px', fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>{title}</h4>
               <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {links.map(link => <li key={link.name}><a href={link.href} style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#60A5FA' }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)' }}
+                {links.map(link => <li key={link.name}><a href={link.href} style={{ fontSize: '13.5px', color: '#9FB3C8', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = 'white' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = '#9FB3C8' }}
                 >{link.name}</a></li>)}
               </ul>
             </div>
           ))}
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>&copy; {new Date().getFullYear()} IIT-Pak. All rights reserved.</p>
-          <div style={{ display: 'flex', gap: '16px' }}>
-            {['Facebook', 'Instagram', 'LinkedIn', 'YouTube'].map(s => <a key={s} href="#" style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = '#60A5FA' }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.4)' }}
-            >{s}</a>)}
-          </div>
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ width: '36px', height: '36px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.1)', border: 'none', color: 'white', cursor: 'pointer', transition: 'background 0.2s' }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.2)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)' }}
-          >
-            <ArrowUp size={16} />
-          </button>
+        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
+          <span>&copy; {new Date().getFullYear()} IIT-Pak. All rights reserved.</span>
+          <span>Lahore · Karachi · Sialkot · Faisalabad · Peshawar · Quetta</span>
         </div>
 
-        <div style={{ textAlign: 'center', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '20px' }}>
+        <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
           <a href="https://www.orbitrixsolutions.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', transition: 'opacity 0.2s' }}
             onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8' }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
@@ -89,6 +85,15 @@ export default function Footer() {
           </a>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .footer-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .footer-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </footer>
   )
 }

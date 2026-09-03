@@ -3,9 +3,9 @@ import { ArrowRight } from 'lucide-react'
 
 const partners = [
   { name: 'Grando', type: 'Sublimation & Digital Printing', image: '/images/Sublimation Printer (1.7 and 3 Metre).jpg' },
-  { name: 'LEAF Pakistan', type: 'Industrial Printing Machinery', image: '/images/Eco Solvent Printer.jpg' },
+  { name: 'LEAF Pakistan', type: 'Eco Solvent Printing', image: '/images/Eco Solvent Printer.jpg' },
   { name: 'GBOS', type: 'Laser Cutting Systems', image: '/images/Dual Head Asynchronous High Efficiency Laser Cutter.png' },
-  { name: 'Visionscan', type: 'Smart Inspection Technology', image: '/images/UV roll to roll printer.jpg' },
+  { name: 'Visionscan', type: 'UV Roll-to-Roll Printing', image: '/images/UV roll to roll printer.jpg' },
 ]
 
 export default function Principals() {

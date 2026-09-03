@@ -2,15 +2,15 @@ import { motion } from 'framer-motion'
 import { Layers, Printer, Sparkles, Scissors, Flame, Wrench, Package, Droplets, Zap, Clock } from 'lucide-react'
 
 const techs = [
-  { icon: Layers, title: 'Sublimation Printing', desc: 'Industrial and commercial sublimation solutions for sportswear, garments, fashion and textile applications.', image: '/images/Sublimation Printer (1.7 and 3 Metre).jpg' },
+  { icon: Layers, title: 'Sublimation Printing', desc: 'Industrial and commercial sublimation solutions for sportswear, garments, fashion and textile applications.', image: '/images/Sublimation Printer (1.7 and 3 Metre).jpg', brand: 'Grando' },
   { icon: Sparkles, title: 'DTF Printing', desc: 'Complete DTF solutions including printing technology, powder application and related consumables.' },
   { icon: Printer, title: 'DTG — Direct-to-Garment', desc: 'Solutions for direct garment printing, particularly for fashion brands, custom apparel and short-run production.' },
-  { icon: Zap, title: 'Direct Printing', desc: 'Digital direct-printing solutions designed around different production requirements and applications.', image: '/images/Eco Solvent Printer.jpg' },
-  { icon: Flame, title: 'Roller Heat Transfer', desc: 'Heat-transfer equipment for garment and textile production environments.' },
+  { icon: Zap, title: 'Eco Solvent Printing', desc: 'Digital eco-solvent printing solutions designed for signage, banners, vehicle wraps and outdoor applications.', image: '/images/Eco Solvent Printer.jpg', brand: 'LEAF' },
+  { icon: Flame, title: 'UV Roll-to-Roll Printing', desc: 'High-speed UV printing for flexible substrates, banners, wallpaper and industrial textile applications.', image: '/images/UV roll to roll printer.jpg', brand: 'Visionscan' },
+  { icon: Scissors, title: 'Laser Cutting Machines', desc: 'Precision laser cutting technology for garment, textile, leather and printing ecosystem applications.', image: '/images/Dual Head Asynchronous High Efficiency Laser Cutter.png', brand: 'GBOS' },
   { icon: Wrench, title: 'Accessories', desc: 'Essential accessories and supporting equipment required to operate and maintain printing systems.' },
   { icon: Package, title: 'Spare Parts', desc: 'Reliable spare parts availability to reduce downtime and keep production running.' },
   { icon: Droplets, title: 'Consumables', desc: 'A complete range of inks, DTF powders, printing materials and other application-specific supplies.' },
-  { icon: Scissors, title: 'Laser Machines', desc: 'Laser technology for applications relevant to the garment, textile and printing ecosystem.', image: '/images/Digital Laser DIe Cutter.png' },
   { icon: Clock, title: 'Upcoming: Heat Transfer Vinyl', desc: 'Heat Transfer Vinyl is coming to the IIT-Pak portfolio, expanding our offering for garment customization.' },
 ]
 
@@ -48,6 +48,7 @@ export default function Technology() {
                     <tech.icon size={40} style={{ color: '#2D8FD1' }} />
                   </div>
                 )}
+                {tech.brand && <p style={{ fontSize: '11px', color: '#2D8FD1', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '6px' }}>{tech.brand}</p>}
                 <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '17px', color: '#0C2340', marginBottom: '8px' }}>{tech.title}</h3>
                 <p style={{ fontSize: '14px', color: '#5A6B7C', lineHeight: 1.6 }}>{tech.desc}</p>
               </div>

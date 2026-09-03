@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 620" width="500" height="620">
+  <!-- Pakistan accurate outline -->
+  <path d="M283,25 L290,30 L295,42 L305,52 L318,48 L330,55 L340,72 L348,88 L352,105 L355,120 L360,138 L365,155 L362,172 L358,185 L365,198 L360,215 L352,228 L348,245 L342,260 L338,278 L332,295 L325,310 L318,328 L310,345 L302,360 L292,375 L282,390 L270,405 L258,418 L245,430 L230,442 L215,452 L198,460 L180,465 L165,458 L150,448 L138,435 L128,420 L118,402 L108,382 L100,362 L94,340 L88,318 L82,295 L78,272 L74,248 L70,225 L66,202 L62,180 L58,158 L55,138 L58,118 L65,100 L75,82 L88,68 L102,56 L118,46 L135,38 L152,32 L170,28 L190,24 L210,22 L230,21 L250,22 L268,24 Z" fill="#DCE7F2" stroke="#B0BEC5" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Azad Kashmir region -->
+  <path d="M305,52 L312,58 L318,65 L322,75 L325,85 L320,92 L315,88 L310,80 L305,72 L300,62 Z" fill="#DCE7F2" stroke="#B0BEC5" stroke-width="1" stroke-linejoin="round"/>
+
+  <!-- Gilgit-Baltistan region -->
+  <path d="M268,24 L275,18 L285,15 L295,18 L305,22 L312,28 L318,38 L318,48 L310,52 L300,50 L290,45 L280,38 L272,30 Z" fill="#DCE7F2" stroke="#B0BEC5" stroke-width="1" stroke-linejoin="round"/>
+
+  <!-- City markers -->
+  <g>
+    <!-- Peshawar -->
+    <circle cx="215" cy="115" r="5" fill="#2D8FD1" stroke="white" stroke-width="1.5"/>
+    <text x="225" y="119" font-family="'JetBrains Mono', monospace" font-size="11" fill="#173A5E" font-weight="600">Peshawar</text>
+
+    <!-- Islamabad -->
+    <circle cx="260" cy="145" r="5" fill="#2D8FD1" stroke="white" stroke-width="1.5"/>
+    <text x="270" y="149" font-family="'JetBrains Mono', monospace" font-size="11" fill="#173A5E" font-weight="600">Islamabad</text>
+
+    <!-- Gujranwala -->
+    <circle cx="282" cy="195" r="4" fill="#2D8FD1" stroke="white" stroke-width="1.5"/>
+    <text x="292" y="199" font-family="'JetBrains Mono', monospace" font-size="10" fill="#173A5E">Gujranwala</text>
+
+    <!-- Sialkot -->
+    <circle cx="300" cy="185" r="4" fill="#2D8FD1" stroke="white" stroke-width="1.5"/>
+    <text x="310" y="189" font-family="'JetBrains Mono', monospace" font-size="10" fill="#173A5E">Sialkot</text>
+
+    <!-- Lahore -->
+    <circle cx="310" cy="225" r="6" fill="#2D8FD1" stroke="white" stroke-width="2"/>
+    <text x="322" y="229" font-family="'JetBrains Mono', monospace" font-size="12" fill="#173A5E" font-weight="700">Lahore</text>
+
+    <!-- Faisalabad -->
+    <circle cx="270" cy="255" r="5" fill="#2D8FD1" stroke="white" stroke-width="1.5"/>
+    <text x="282" y="259" font-family="'JetBrains Mono', monospace" font-size="11" fill="#173A5E" font-weight="600">Faisalabad</text>
+
+    <!-- Multan -->
+    <circle cx="235" cy="310" r="5" fill="#2D8FD1" stroke="white" stroke-width="1.5"/>
+    <text x="247" y="314" font-family="'JetBrains Mono', monospace" font-size="11" fill="#173A5E" font-weight="600">Multan</text>
+
+    <!-- Karachi -->
+    <circle cx="195" cy="445" r="6" fill="#2D8FD1" stroke="white" stroke-width="2"/>
+    <text x="207" y="449" font-family="'JetBrains Mono', monospace" font-size="12" fill="#173A5E" font-weight="700">Karachi</text>
+
+    <!-- Quetta -->
+    <circle cx="105" cy="305" r="5" fill="#2D8FD1" stroke="white" stroke-width="1.5"/>
+    <text x="60" y="309" font-family="'JetBrains Mono', monospace" font-size="11" fill="#173A5E" font-weight="600">Quetta</text>
+  </g>
+</svg>

@@ -1,23 +1,23 @@
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
+import Stats from './components/Stats'
+import Journey from './components/Journey'
 import Leadership from './components/Leadership'
-import Companies from './components/Companies'
-import Industries from './components/Industries'
-import WhyChooseUs from './components/WhyChooseUs'
-import ManufacturingProcess from './components/ManufacturingProcess'
-import FeaturedProducts from './components/FeaturedProducts'
 import Technology from './components/Technology'
-import Testimonials from './components/Testimonials'
-import GlobalPresence from './components/GlobalPresence'
-import News from './components/News'
+import Principals from './components/Principals'
+import WhyChooseUs from './components/WhyChooseUs'
+import Industries from './components/Industries'
+import Solutions from './components/Solutions'
+import Excellence from './components/Excellence'
+import TrustedBy from './components/TrustedBy'
+import Reach from './components/Reach'
+import Insights from './components/Insights'
 import Gallery from './components/Gallery'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
-import ParticleBackground from './components/ParticleBackground'
 
 function App() {
   useEffect(() => {
@@ -36,22 +36,22 @@ function App() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-dark-bg">
-      <ParticleBackground />
+    <div className="relative min-h-screen bg-bg">
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Leadership />
-        <Companies />
-        <Industries />
-        <WhyChooseUs />
-        <ManufacturingProcess />
-        <FeaturedProducts />
+        <Stats />
+        <Journey />
         <Technology />
-        <Testimonials />
-        <GlobalPresence />
-        <News />
+        <Principals />
+        <WhyChooseUs />
+        <Industries />
+        <Solutions />
+        <Excellence />
+        <Leadership />
+        <TrustedBy />
+        <Reach />
+        <Insights />
         <Gallery />
         <FAQ />
         <Contact />

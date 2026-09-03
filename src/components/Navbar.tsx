@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Companies', href: '#companies' },
+  { name: 'Journey', href: '#journey' },
+  { name: 'Technologies', href: '#technology' },
+  { name: 'Solutions', href: '#solutions' },
   { name: 'Industries', href: '#industries' },
-  { name: 'Products', href: '#products' },
-  { name: 'Technology', href: '#technology' },
-  { name: 'Gallery', href: '#gallery' },
+  { name: 'Partners', href: '#principals' },
+  { name: 'Insights', href: '#insights' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -33,29 +32,28 @@ export default function Navbar() {
   }, [mobileOpen])
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    <nav
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 50,
-        transition: 'all 0.5s',
-        background: scrolled || mobileOpen ? 'rgba(8,22,46,0.95)' : 'transparent',
-        backdropFilter: scrolled || mobileOpen ? 'blur(20px)' : 'none',
-        WebkitBackdropFilter: scrolled || mobileOpen ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(0,184,255,0.15)' : 'none',
+        transition: 'all 0.3s',
+        background: scrolled || mobileOpen ? 'rgba(255,255,255,0.98)' : 'rgba(255,255,255,0.95)',
+        backdropFilter: scrolled || mobileOpen ? 'blur(12px)' : 'none',
+        WebkitBackdropFilter: scrolled || mobileOpen ? 'blur(12px)' : 'none',
+        borderBottom: '1px solid',
+        borderColor: scrolled ? '#E2E8F0' : 'transparent',
+        boxShadow: scrolled ? '0 1px 3px rgba(0,0,0,0.05)' : 'none',
       }}
     >
       <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
         <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flexShrink: 0 }}>
-          <img src="/logo.svg" alt="IIT" style={{ height: '40px', width: 'auto' }} />
+          <img src="/logo.svg" alt="IIT-Pak" style={{ height: '40px', width: 'auto' }} />
           <div className="nav-brand-text">
-            <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '17px', color: 'white', display: 'block', lineHeight: 1.2 }}>IIT Pakistan</span>
-            <span style={{ fontSize: '9px', color: '#C8D3E3', letterSpacing: '0.2em', textTransform: 'uppercase' }}>Industrial Innovation & Technology</span>
+            <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '17px', color: '#1A1A2E', display: 'block', lineHeight: 1.2 }}>IIT-Pak</span>
+            <span style={{ fontSize: '9px', color: '#5A6474', letterSpacing: '0.2em', textTransform: 'uppercase' }}>Printing Technology Platform</span>
           </div>
         </a>
 
@@ -64,19 +62,21 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              style={{ padding: '8px 14px', fontSize: '13px', fontWeight: 500, color: '#C8D3E3', textDecoration: 'none', borderRadius: '8px', transition: 'all 0.3s', whiteSpace: 'nowrap' }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = '#00B8FF'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = '#C8D3E3'; e.currentTarget.style.background = 'transparent' }}
+              style={{ padding: '8px 14px', fontSize: '13px', fontWeight: 500, color: '#5A6474', textDecoration: 'none', borderRadius: '8px', transition: 'all 0.2s', whiteSpace: 'nowrap' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#1E5BB5'; e.currentTarget.style.background = '#F5F7FA' }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = '#5A6474'; e.currentTarget.style.background = 'transparent' }}
             >
               {link.name}
             </a>
           ))}
-          <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.1)', margin: '0 8px', flexShrink: 0 }} />
+          <div style={{ width: '1px', height: '24px', background: '#E2E8F0', margin: '0 8px', flexShrink: 0 }} />
           <a
             href="#contact"
-            style={{ padding: '10px 20px', background: '#00B8FF', color: 'white', fontWeight: 600, fontSize: '13px', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s', whiteSpace: 'nowrap' }}
+            style={{ padding: '10px 20px', background: '#1E5BB5', color: 'white', fontWeight: 600, fontSize: '13px', borderRadius: '10px', textDecoration: 'none', transition: 'all 0.2s', whiteSpace: 'nowrap' }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#14427A' }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = '#1E5BB5' }}
           >
-            Get a Quote
+            Talk to Our Experts
           </a>
         </div>
 
@@ -84,45 +84,37 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="nav-hamburger"
           aria-label="Toggle menu"
-          style={{ padding: '8px', color: 'white', background: 'none', border: 'none', cursor: 'pointer', lineHeight: 0 }}
+          style={{ padding: '8px', color: '#1A1A2E', background: 'none', border: 'none', cursor: 'pointer', lineHeight: 0 }}
         >
           {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="nav-mobile-menu"
-          >
-            <div style={{ padding: '16px 24px 32px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  style={{ display: 'block', padding: '14px 16px', fontSize: '16px', fontWeight: 500, color: '#C8D3E3', textDecoration: 'none', borderRadius: '10px', transition: 'all 0.2s' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#00B8FF'; e.currentTarget.style.background = 'rgba(0,184,255,0.08)' }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = '#C8D3E3'; e.currentTarget.style.background = 'transparent' }}
-                >
-                  {link.name}
-                </a>
-              ))}
+      {mobileOpen && (
+        <div className="nav-mobile-menu">
+          <div style={{ padding: '16px 24px 32px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            {navLinks.map((link) => (
               <a
-                href="#contact"
+                key={link.name}
+                href={link.href}
                 onClick={() => setMobileOpen(false)}
-                style={{ display: 'block', marginTop: '12px', padding: '14px 24px', background: '#00B8FF', color: 'white', fontWeight: 600, fontSize: '15px', textAlign: 'center', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s' }}
+                style={{ display: 'block', padding: '14px 16px', fontSize: '16px', fontWeight: 500, color: '#5A6474', textDecoration: 'none', borderRadius: '10px', transition: 'all 0.2s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#1E5BB5'; e.currentTarget.style.background = '#F5F7FA' }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#5A6474'; e.currentTarget.style.background = 'transparent' }}
               >
-                Get a Quote
+                {link.name}
               </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
+              style={{ display: 'block', marginTop: '12px', padding: '14px 24px', background: '#1E5BB5', color: 'white', fontWeight: 600, fontSize: '15px', textAlign: 'center', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.2s' }}
+            >
+              Talk to Our Experts
+            </a>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .nav-brand-text { display: none; }
@@ -139,6 +131,6 @@ export default function Navbar() {
           .nav-mobile-menu { display: none !important; }
         }
       `}</style>
-    </motion.nav>
+    </nav>
   )
 }

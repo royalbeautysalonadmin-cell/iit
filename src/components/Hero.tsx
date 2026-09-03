@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight, Phone } from 'lucide-react'
 
 const stats = [
-  { label: 'Years Experience', value: 20, suffix: '+' },
-  { label: 'Clients Worldwide', value: 500, suffix: '+' },
-  { label: 'Countries Served', value: 30, suffix: '+' },
-  { label: 'Products Delivered', value: 10000, suffix: '+' },
+  { label: 'Customers Served', value: 500, suffix: '+' },
+  { label: 'Provinces Covered', value: 4, suffix: '' },
+  { label: 'Major Cities', value: 9, suffix: '+' },
+  { label: 'Technology Platforms', value: 6, suffix: '+' },
 ]
 
 function CountUp({ end, suffix }: { end: number; suffix: string }) {
@@ -29,67 +29,76 @@ function CountUp({ end, suffix }: { end: number; suffix: string }) {
 
 export default function Hero() {
   return (
-    <section id="home" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0 }}>
-        <div style={{ position: 'absolute', inset: 0, background: '#08162E', zIndex: 10 }} />
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
-          <div style={{ position: 'absolute', top: '25%', left: '25%', width: '384px', height: '384px', background: 'rgba(0,184,255,0.1)', borderRadius: '50%', filter: 'blur(120px)', animation: 'float 6s ease-in-out infinite' }} />
-          <div style={{ position: 'absolute', bottom: '25%', right: '25%', width: '320px', height: '320px', background: 'rgba(11,61,145,0.2)', borderRadius: '50%', filter: 'blur(100px)', animation: 'float 6s ease-in-out infinite 3s' }} />
-        </div>
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.03, backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 0v60M0 0h60' stroke='%2300B8FF' stroke-width='0.5'/%3E%3C/svg%3E")`, backgroundSize: '60px 60px' }} />
-      </div>
+    <section id="home" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden', background: 'linear-gradient(135deg, #F8FAFF 0%, #FFFFFF 50%, #F0F4FF 100%)' }}>
+      <div style={{ position: 'absolute', top: '-200px', right: '-200px', width: '600px', height: '600px', background: 'rgba(30,91,181,0.04)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: '-150px', left: '-150px', width: '500px', height: '500px', background: 'rgba(30,91,181,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
 
-      <div style={{ position: 'relative', zIndex: 20, width: '100%' }}>
-        <div className="container-main" style={{ paddingTop: 'clamp(80px, 15vw, 128px)', paddingBottom: 'clamp(60px, 12vw, 96px)' }}>
-          <div style={{ textAlign: 'center', maxWidth: '48rem', margin: '0 auto' }}>
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-              className="glass-card"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '9999px', fontSize: '14px', color: '#00B8FF', marginBottom: '32px' }}
+      <div style={{ position: 'relative', zIndex: 10, width: '100%' }}>
+        <div className="container-main" style={{ paddingTop: 'clamp(100px, 18vw, 160px)', paddingBottom: 'clamp(60px, 12vw, 100px)' }}>
+          <div style={{ maxWidth: '48rem' }}>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '9999px', fontSize: '13px', fontWeight: 500, color: '#1E5BB5', background: '#E8F0FE', marginBottom: '24px' }}
             >
-              <span style={{ width: '8px', height: '8px', background: '#00B8FF', borderRadius: '50%', animation: 'glow-pulse 3s ease-in-out infinite' }} />
-              Building the Future of Textile Manufacturing
+              <span style={{ width: '6px', height: '6px', background: '#1E5BB5', borderRadius: '50%' }} />
+              Printing Technology Platform for Pakistan
             </motion.div>
 
-            <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }}
-              style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: 'clamp(3rem, 7vw, 5.5rem)', lineHeight: 1.0, letterSpacing: '-0.02em', marginBottom: '32px' }}
+            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
+              style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '24px', color: '#1A1A2E' }}
             >
-              <span style={{ color: 'white' }}>Industrial Innovation</span>
+              Innovative Printing Technology.
               <br />
-              <span className="text-gradient">& Technology</span>
+              <span style={{ color: '#1E5BB5' }}>Built for Pakistan.</span>
             </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
-              style={{ fontSize: 'clamp(15px, 2.5vw, 18px)', color: '#C8D3E3', maxWidth: '40rem', margin: '0 auto 48px', lineHeight: 1.7, padding: '0 16px' }}
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}
+              style={{ fontSize: 'clamp(15px, 2vw, 18px)', color: '#5A6474', maxWidth: '40rem', marginBottom: '40px', lineHeight: 1.7 }}
             >
-              IIT Pakistan is a leading industrial group delivering world-class textile machinery, custom sportswear manufacturing, sublimation solutions, and innovative printing technologies to businesses worldwide.
+              From sublimation and DTF to DTG, direct printing and advanced digital printing technologies, IIT-Pak provides machinery, consumables, spare parts and technical support tailored to the requirements of Pakistan's growing printing, garment and textile industries.
             </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }}
-              style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}
             >
-              <a href="#companies" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 28px', background: '#00B8FF', color: 'white', fontWeight: 600, borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s' }}>
-                Explore Companies <ArrowRight size={18} />
+              <a href="#solutions" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 28px', background: '#1E5BB5', color: 'white', fontWeight: 600, borderRadius: '12px', textDecoration: 'none', transition: 'all 0.2s', fontSize: '15px' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#14427A' }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#1E5BB5' }}
+              >
+                Explore Our Solutions <ArrowRight size={18} />
               </a>
-              <a href="#contact" className="glass-card" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 28px', color: 'white', fontWeight: 600, borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s' }}>
-                <Play size={18} style={{ color: '#00B8FF' }} /> Contact Us
+              <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 28px', background: 'white', color: '#1E5BB5', fontWeight: 600, borderRadius: '12px', textDecoration: 'none', transition: 'all 0.2s', fontSize: '15px', border: '1px solid #E2E8F0' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#1E5BB5' }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E2E8F0' }}
+              >
+                <Phone size={18} /> Talk to Our Experts
               </a>
             </motion.div>
           </div>
 
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }}
-            style={{ marginTop: 'clamp(40px, 8vw, 80px)', maxWidth: '56rem', marginLeft: 'auto', marginRight: 'auto', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.0 }}
+            style={{ marginTop: 'clamp(48px, 8vw, 80px)', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', maxWidth: '56rem' }}
+            className="hero-stats-grid"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="glass-card glow-hover" style={{ borderRadius: '16px', padding: '24px', textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: 'clamp(1.5rem, 3vw, 2rem)' }} className="text-gradient">
+              <div key={stat.label} style={{ borderRadius: '16px', padding: '24px', textAlign: 'center', background: 'white', border: '1px solid #E2E8F0', transition: 'all 0.2s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.06)'; e.currentTarget.style.borderColor = '#1E5BB5' }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = '#E2E8F0' }}
+              >
+                <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#1E5BB5' }}>
                   <CountUp end={stat.value} suffix={stat.suffix} />
                 </div>
-                <div style={{ fontSize: '13px', color: '#C8D3E3', marginTop: '4px' }}>{stat.label}</div>
+                <div style={{ fontSize: '13px', color: '#5A6474', marginTop: '4px' }}>{stat.label}</div>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </section>
   )
 }

@@ -1,29 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-deep-blue: #0B3D91;
-  --color-royal-blue: #1565C0;
-  --color-cyan-accent: #00B8FF;
-  --color-dark-bg: #08162E;
-  --color-card-bg: #11284A;
-  --color-text-gray: #C8D3E3;
-  --color-glass: rgba(17, 40, 74, 0.6);
-  --color-glass-border: rgba(0, 184, 255, 0.15);
+  --color-primary: #1E5BB5;
+  --color-primary-dark: #14427A;
+  --color-primary-light: #E8F0FE;
+  --color-bg: #FFFFFF;
+  --color-surface: #F5F7FA;
+  --color-text: #1A1A2E;
+  --color-text-secondary: #5A6474;
+  --color-border: #E2E8F0;
+  --color-accent: #1E5BB5;
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
-
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
 }
 
 * {
@@ -39,8 +27,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-dark-bg);
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -50,33 +38,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--color-dark-bg); }
-::-webkit-scrollbar-thumb { background: var(--color-deep-blue); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-cyan-accent); }
-
-.glass-card {
-  background: var(--color-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--color-glass-border);
-}
-
-.glow-hover {
-  transition: box-shadow 0.5s ease, transform 0.3s ease, border-color 0.3s ease;
-}
-.glow-hover:hover {
-  box-shadow: 0 0 30px rgba(0, 184, 255, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
-  border-color: rgba(0, 184, 255, 0.3);
-}
-
-.text-gradient {
-  color: var(--color-cyan-accent);
-}
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-dark); }
 
 .section-divider {
   width: 100%;
   height: 1px;
-  background: rgba(0, 184, 255, 0.2);
+  background: var(--color-border);
   max-width: 80rem;
   margin: 0 auto;
 }
@@ -91,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* Layout utility classes - using standard CSS to guarantee they work */
 .container-main {
   width: 100%;
   max-width: 80rem;
@@ -141,30 +109,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
 }
 
-.card-glass {
-  background: rgba(17, 40, 74, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 184, 255, 0.15);
-}
-
-.map-region-label {
-  cursor: default;
-}
-.map-region-label > div {
-  opacity: 0.85;
-  transition: opacity 0.3s, transform 0.3s;
-}
-.map-region-label:hover > div {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-2px);
-  border-color: rgba(0,184,255,0.5);
-}
-
 input:focus, textarea:focus, select:focus {
-  border-color: rgba(0,184,255,0.6) !important;
-  box-shadow: 0 0 0 3px rgba(0,184,255,0.15), inset 0 0 0 1px rgba(0,184,255,0.2);
-  background: rgba(255,255,255,0.1) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(30, 91, 181, 0.1);
   outline: none;
 }
 
@@ -183,10 +130,10 @@ button[type="submit"] {
 }
 
 input::placeholder, textarea::placeholder {
-  color: rgba(200,211,227,0.5);
+  color: #9CA3AF;
 }
 
 select option {
-  background: #08162E;
-  color: white;
+  background: white;
+  color: var(--color-text);
 }

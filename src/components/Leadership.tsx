@@ -1,41 +1,47 @@
 import { motion } from 'framer-motion'
-import { Phone, Mail, ExternalLink } from 'lucide-react'
+import { Phone, Mail } from 'lucide-react'
 import { Section, SectionHeader } from './Layout'
 
 const leaders = [
-  { name: 'Saadat Nazeer', role: 'CEO & Founder', phone: '0306-1176766', description: 'Founder and Chief Executive Officer of IIT Pakistan, leading the company\'s vision of becoming a global leader in textile manufacturing solutions, industrial printing technologies, and custom sportswear production.', initials: 'SN', gradient: '#00B8FF' },
-  { name: 'Muhammad Wasea', role: 'Director', phone: '0314-1850051', description: 'Director of IIT Pakistan, responsible for operations, strategic partnerships, business development, and customer success. He oversees the growth of all subsidiary companies.', initials: 'MW', gradient: '#1565C0' },
+  { name: 'Tanveer Ahmad', role: 'Business Director', phone: '+92 300 8576668', description: 'Business Director of IIT-Pak, leading the company\'s growth as a printing technology platform connecting international innovation with Pakistan\'s printing, garment and textile industries.', initials: 'TA', color: '#1E5BB5' },
+  { name: 'Saadat Nazeer', role: 'CEO & Founder', phone: '+92 306 1176766', description: 'Founder and Chief Executive Officer of IIT-Pak, establishing the company\'s foundation in printing inks and accessories and building it into a technology platform for the Pakistani market.', initials: 'SN', color: '#14427A' },
 ]
 
 export default function Leadership() {
   return (
-    <Section id="leadership" style={{ position: 'relative' }}>
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '800px', height: '800px', background: 'rgba(11,61,145,0.2)', borderRadius: '50%', filter: 'blur(200px)' }} />
-      <SectionHeader tag="Our Leadership" title="Meet the" titleGradient="Visionaries" description="Guided by experienced leaders who have built IIT Pakistan into a global industrial powerhouse." />
+    <Section id="leadership" style={{ background: '#FFFFFF' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: '#E2E8F0' }} />
+      <SectionHeader tag="Our Leadership" title="Meet the" titleAccent="Team" description="Guided by experienced leaders who have built IIT-Pak into Pakistan's printing technology platform." />
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '32px', maxWidth: '64rem', margin: '0 auto' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', maxWidth: '56rem', margin: '0 auto' }}>
         {leaders.map((leader, i) => (
-          <motion.div key={leader.name} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.2 }}>
-            <div className="glass-card glow-hover" style={{ borderRadius: '24px', padding: 'clamp(24px, 4vw, 40px)', height: '100%' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '24px' }}>
-                <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: leader.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: '20px', color: 'white', flexShrink: 0 }}>
+          <motion.div key={leader.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.15 }}>
+            <div style={{ background: '#F5F7FA', borderRadius: '20px', padding: 'clamp(24px, 4vw, 36px)', height: '100%', border: '1px solid #E2E8F0', transition: 'all 0.2s' }}
+              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.06)'; e.currentTarget.style.borderColor = '#1E5BB5' }}
+              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = '#E2E8F0' }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
+                <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: leader.color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: '20px', color: 'white', flexShrink: 0 }}>
                   {leader.initials}
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.25rem', color: 'white' }}>{leader.name}</h3>
-                  <span style={{ color: '#00B8FF', fontWeight: 500, fontSize: '14px' }}>{leader.role}</span>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.25rem', color: '#1A1A2E' }}>{leader.name}</h3>
+                  <span style={{ color: '#1E5BB5', fontWeight: 500, fontSize: '14px' }}>{leader.role}</span>
                 </div>
               </div>
-              <p style={{ color: '#C8D3E3', lineHeight: 1.7, marginBottom: '24px', fontSize: '14px' }}>{leader.description}</p>
+              <p style={{ color: '#5A6474', lineHeight: 1.7, marginBottom: '20px', fontSize: '14px' }}>{leader.description}</p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                <a href={`tel:${leader.phone.replace(/-/g, '')}`} className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '12px', fontSize: '14px', color: '#C8D3E3', textDecoration: 'none', transition: 'all 0.3s' }}>
-                  <Phone size={16} />{leader.phone}
+                <a href={`tel:${leader.phone.replace(/\s/g, '')}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '10px', fontSize: '14px', color: '#5A6474', textDecoration: 'none', transition: 'all 0.2s', background: 'white', border: '1px solid #E2E8F0' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#1E5BB5' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E2E8F0' }}
+                >
+                  <Phone size={14} style={{ color: '#1E5BB5' }} />{leader.phone}
                 </a>
-                <a href="mailto:info@iitpakistan.com" className="glass-card" style={{ padding: '8px', borderRadius: '12px', color: '#C8D3E3', textDecoration: 'none', transition: 'all 0.3s' }}>
-                  <Mail size={16} />
-                </a>
-                <a href="#" className="glass-card" style={{ padding: '8px', borderRadius: '12px', color: '#C8D3E3', textDecoration: 'none', transition: 'all 0.3s' }}>
-                  <ExternalLink size={16} />
+                <a href="mailto:info@iitpakistan.com" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '10px', fontSize: '14px', color: '#5A6474', textDecoration: 'none', transition: 'all 0.2s', background: 'white', border: '1px solid #E2E8F0' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#1E5BB5' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E2E8F0' }}
+                >
+                  <Mail size={14} style={{ color: '#1E5BB5' }} />Email
                 </a>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Stats from './components/Stats'
 import Journey from './components/Journey'
 import Leadership from './components/Leadership'
 import Technology from './components/Technology'
@@ -40,7 +39,6 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Stats />
         <Journey />
         <Technology />
         <Principals />

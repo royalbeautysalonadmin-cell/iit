@@ -1,93 +1,85 @@
-import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Phone } from 'lucide-react'
-
-const stats = [
-  { label: 'Customers Served', value: 500, suffix: '+' },
-  { label: 'Provinces Covered', value: 4, suffix: '' },
-  { label: 'Major Cities', value: 9, suffix: '+' },
-  { label: 'Technology Platforms', value: 6, suffix: '+' },
-]
-
-function CountUp({ end, suffix }: { end: number; suffix: string }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLSpanElement>(null)
-  const [started, setStarted] = useState(false)
-  useEffect(() => {
-    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting && !started) setStarted(true) }, { threshold: 0.5 })
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [started])
-  useEffect(() => {
-    if (!started) return
-    let t: number
-    const anim = (now: number) => { if (!t) t = now; const p = Math.min((now - t) / 2000, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * end)); if (p < 1) requestAnimationFrame(anim) }
-    requestAnimationFrame(anim)
-  }, [started, end])
-  return <span ref={ref}>{count.toLocaleString()}{suffix}</span>
-}
+import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section id="home" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden', background: 'linear-gradient(135deg, #F8FAFF 0%, #FFFFFF 50%, #F0F4FF 100%)' }}>
-      <div style={{ position: 'absolute', top: '-200px', right: '-200px', width: '600px', height: '600px', background: 'rgba(30,91,181,0.04)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: '-150px', left: '-150px', width: '500px', height: '500px', background: 'rgba(30,91,181,0.03)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
+    <section id="home" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden', background: 'linear-gradient(180deg, #ffffff 0%, #F2F6FA 100%)' }}>
+      {/* Decorative lines */}
+      <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0, opacity: 0.9 }} viewBox="0 0 1180 520" preserveAspectRatio="none">
+        <path d="M700 -20 L1220 500" stroke="#2D8FD1" strokeWidth="2" opacity="0.15"/>
+        <path d="M760 -20 Q980 180 1220 420" stroke="#2D8FD1" strokeWidth="2" fill="none" opacity="0.18"/>
+        <path d="M820 -20 Q1000 220 1220 480" stroke="#8A97A6" strokeWidth="2" fill="none" opacity="0.15"/>
+        <path d="M880 -20 Q1040 260 1220 520" stroke="#8A97A6" strokeWidth="2" fill="none" opacity="0.12"/>
+      </svg>
 
-      <div style={{ position: 'relative', zIndex: 10, width: '100%' }}>
-        <div className="container-main" style={{ paddingTop: 'clamp(100px, 18vw, 160px)', paddingBottom: 'clamp(60px, 12vw, 100px)' }}>
-          <div style={{ maxWidth: '48rem' }}>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '9999px', fontSize: '13px', fontWeight: 500, color: '#1E5BB5', background: '#E8F0FE', marginBottom: '24px' }}
-            >
-              <span style={{ width: '6px', height: '6px', background: '#1E5BB5', borderRadius: '50%' }} />
-              Printing Technology Platform for Pakistan
-            </motion.div>
-
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
-              style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '24px', color: '#1A1A2E' }}
-            >
-              Innovative Printing Technology.
-              <br />
-              <span style={{ color: '#1E5BB5' }}>Built for Pakistan.</span>
-            </motion.h1>
-
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}
-              style={{ fontSize: 'clamp(15px, 2vw, 18px)', color: '#5A6474', maxWidth: '40rem', marginBottom: '40px', lineHeight: 1.7 }}
-            >
-              From sublimation and DTF to DTG, direct printing and advanced digital printing technologies, IIT-Pak provides machinery, consumables, spare parts and technical support tailored to the requirements of Pakistan's growing printing, garment and textile industries.
-            </motion.p>
-
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}
-            >
-              <a href="#solutions" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 28px', background: '#1E5BB5', color: 'white', fontWeight: 600, borderRadius: '12px', textDecoration: 'none', transition: 'all 0.2s', fontSize: '15px' }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = '#14427A' }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = '#1E5BB5' }}
+      <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
+        <div className="container-main" style={{ paddingTop: 'clamp(100px, 18vw, 140px)', paddingBottom: 'clamp(60px, 12vw, 90px)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }} className="hero-grid">
+            <div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: "'JetBrains Mono', monospace", fontSize: '12.5px', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1A6FB0', background: 'rgba(45,143,209,0.08)', border: '1px solid rgba(45,143,209,0.25)', padding: '6px 14px', borderRadius: '20px', marginBottom: '26px' }}
               >
-                Explore Our Solutions <ArrowRight size={18} />
-              </a>
-              <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 28px', background: 'white', color: '#1E5BB5', fontWeight: 600, borderRadius: '12px', textDecoration: 'none', transition: 'all 0.2s', fontSize: '15px', border: '1px solid #E2E8F0' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#1E5BB5' }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E2E8F0' }}
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2D8FD1', animation: 'pulse 2s infinite' }} />
+                ONE PLATFORM · MULTIPLE TECHNOLOGIES
+              </motion.div>
+
+              <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
+                style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 'clamp(36px, 5.2vw, 60px)', lineHeight: 1.06, marginBottom: '22px', color: '#0C2340', maxWidth: '620px' }}
               >
-                <Phone size={18} /> Talk to Our Experts
-              </a>
+                Innovative printing technology. <span style={{ color: '#2D8FD1' }}>Built for Pakistan.</span>
+              </motion.h1>
+
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}
+                style={{ fontSize: '18px', color: '#3E5064', maxWidth: '520px', marginBottom: '36px', lineHeight: 1.6 }}
+              >
+                From sublimation and DTF to DTG, direct printing and advanced digital printing — IIT-Pak provides machinery, consumables, spare parts and technical support tailored to Pakistan's garment, sportswear and textile industries.
+              </motion.p>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
+                style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center' }}
+              >
+                <a href="#technology" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 26px', background: '#2D8FD1', color: 'white', fontWeight: 500, borderRadius: '3px', textDecoration: 'none', transition: 'all 0.2s', fontSize: '15px', fontFamily: "'Inter', sans-serif" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = '#1A6FB0'; e.currentTarget.style.transform = 'translateY(-1px)' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = '#2D8FD1'; e.currentTarget.style.transform = 'none' }}
+                >
+                  Explore Our Solutions <ArrowRight size={16} />
+                </a>
+                <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 26px', background: 'transparent', color: '#0C2340', fontWeight: 500, borderRadius: '3px', textDecoration: 'none', transition: 'all 0.2s', fontSize: '15px', border: '1.5px solid #D8E2EC', fontFamily: "'Inter', sans-serif" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#2D8FD1'; e.currentTarget.style.transform = 'translateY(-1px)' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D8E2EC'; e.currentTarget.style.transform = 'none' }}
+                >
+                  Talk to Our Experts
+                </a>
+                <a href="#principals" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#1A6FB0', fontWeight: 500, fontSize: '14.5px', padding: '14px 6px', textDecoration: 'none' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.textDecoration = 'underline' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.textDecoration = 'none' }}
+                >
+                  Become a Principal / Partner →
+                </a>
+              </motion.div>
+            </div>
+
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
+              className="hero-image-wrap"
+            >
+              <img src="/images/Sublimation Printer (1.7 and 3 Metre).jpg" alt="IIT-Pak Printing Technology" style={{ width: '100%', borderRadius: '6px', boxShadow: '0 20px 60px -20px rgba(12,35,64,0.3)' }} />
             </motion.div>
           </div>
 
+          {/* Glance strip */}
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.0 }}
-            style={{ marginTop: 'clamp(48px, 8vw, 80px)', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', maxWidth: '56rem' }}
-            className="hero-stats-grid"
+            style={{ marginTop: 'clamp(40px, 6vw, 64px)', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, border: '1px solid #D8E2EC', borderRadius: '6px', background: 'white', boxShadow: '0 20px 50px -25px rgba(12,35,64,0.25)' }}
+            className="glance-strip"
           >
-            {stats.map((stat) => (
-              <div key={stat.label} style={{ borderRadius: '16px', padding: '24px', textAlign: 'center', background: 'white', border: '1px solid #E2E8F0', transition: 'all 0.2s' }}
-                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.06)'; e.currentTarget.style.borderColor = '#1E5BB5' }}
-                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = '#E2E8F0' }}
-              >
-                <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#1E5BB5' }}>
-                  <CountUp end={stat.value} suffix={stat.suffix} />
-                </div>
-                <div style={{ fontSize: '13px', color: '#5A6474', marginTop: '4px' }}>{stat.label}</div>
+            {[
+              { num: '500+', label: 'Customers served across Pakistan' },
+              { num: '4', label: 'Provinces reached' },
+              { num: '9+', label: 'Major cities supported' },
+              { num: '2013', label: "Building Pakistan's printing sector since" },
+            ].map((stat, i) => (
+              <div key={stat.label} style={{ padding: '26px 24px', borderRight: i < 3 ? '1px solid #D8E2EC' : 'none' }} className="glance-stat">
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '30px', fontWeight: 700, color: '#0C2340' }}>{stat.num.includes('+') ? <>{stat.num.replace('+', '')}<span style={{ color: '#2D8FD1' }}>+</span></> : stat.num === '4' ? <span style={{ color: '#2D8FD1' }}>{stat.num}</span> : stat.num === '2013' ? <span style={{ color: '#2D8FD1' }}>{stat.num}</span> : stat.num}</div>
+                <div style={{ fontSize: '13px', color: '#8A97A6', marginTop: '4px' }}>{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -95,8 +87,12 @@ export default function Hero() {
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
-          .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @media (max-width: 900px) {
+          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-image-wrap { display: none; }
+          .glance-strip { grid-template-columns: repeat(2, 1fr) !important; }
+          .glance-stat:nth-child(2) { border-right: none !important; }
         }
       `}</style>
     </section>

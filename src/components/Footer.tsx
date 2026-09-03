@@ -75,6 +75,19 @@ export default function Footer() {
             <ArrowUp size={16} />
           </button>
         </div>
+
+        <div style={{ textAlign: 'center', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '20px' }}>
+          <a href="https://www.orbitrixsolutions.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', transition: 'opacity 0.2s' }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8' }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
+          >
+            <div style={{ width: '28px', height: '28px', borderRadius: '6px', background: '#2D8FD1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: '14px', color: 'white', flexShrink: 0 }}>O</div>
+            <div>
+              <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>Developed by </span>
+              <span style={{ fontSize: '12px', color: '#7FC1EA', fontWeight: 600 }}>OrbitrixSolutions</span>
+            </div>
+          </a>
+        </div>
       </div>
     </footer>
   )
